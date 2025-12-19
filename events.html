@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Green Campus Initiative</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="gradient-orb" id="gradientOrb"></div>
+        <div class="gradient-orb-2"></div>
+        <div class="grid-pattern"></div>
+
+        <div class="floating-elements">
+            <div class="floating-shape" style="left: 15%; top: 20%; animation-delay: 0s; width: 40px; height: 40px;"></div>
+            <div class="floating-shape" style="left: 30%; top: 45%; animation-delay: 0.5s; width: 50px; height: 50px;"></div>
+            <div class="floating-shape" style="left: 45%; top: 20%; animation-delay: 1s; width: 60px; height: 60px;"></div>
+            <div class="floating-shape" style="left: 60%; top: 45%; animation-delay: 1.5s; width: 70px; height: 70px;"></div>
+            <div class="floating-shape" style="left: 75%; top: 20%; animation-delay: 2s; width: 80px; height: 80px;"></div>
+            <div class="floating-shape" style="left: 90%; top: 45%; animation-delay: 2.5s; width: 90px; height: 90px;"></div>
+        </div>
+
+        <nav class="nav scrolled" id="nav">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                        <div class="logo-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 20h10"/>
+                                <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Green Campus</span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="about.html" class="nav-link" data-key="about">About</a>
+                    <a href="programs.html" class="nav-link" data-key="programs">Programs</a>
+                    <a href="events.html" class="nav-link" data-key="events">Events</a>
+                    <a href="about.html#team" class="nav-link" data-key="team">Team</a>
+                    <a href="contact.html" class="nav-link" data-key="contacts">Contact</a>
+
+                    <div class="lang-selector">
+                        <button class="lang-btn" id="langBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                                <path d="M2 12h20"/>
+                            </svg>
+                            <span class="lang-btn-text" id="currentLang">EN</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <button class="lang-option" data-lang="uz">
+                                <span>🇺🇿</span>
+                                <span>O'zbek</span>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5"/>
+                                </svg>
+                            </button>
+                            <button class="lang-option" data-lang="ru">
+                                <span>🇷🇺</span>
+                                <span>Русский</span>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5"/>
+                                </svg>
+                            </button>
+                            <button class="lang-option active" data-lang="en">
+                                <span>🇬🇧</span>
+                                <span>English</span>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="join-btn">
+                        <span data-i18n="nav.join">Join Us</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero" style="min-height: 60vh; padding: 180px 32px 80px;">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 2v4"/>
+                        <path d="M16 2v4"/>
+                        <rect width="18" height="18" x="3" y="4" rx="2"/>
+                        <path d="M3 10h18"/>
+                    </svg>
+                    <span data-i18n="events.tag">Event Calendar</span>
+                </div>
+                <h1 class="hero-title" style="font-size: clamp(36px, 5vw, 56px);">
+                    <span class="hero-highlight" data-i18n="events.header.title1">Upcoming</span><br>
+                    <span data-i18n="events.header.title2">Events & Workshops</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="events.header.subtitle">Join us in creating a greener future through community events, workshops, and collaborative initiatives</p>
+            </div>
+        </section>
+
+        <section class="events-section">
+            <div class="section-content">
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                                <path d="M8 2v4"/>
+                                <path d="M16 2v4"/>
+                                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                                <path d="M3 10h18"/>
+                            </svg>
+                            <span class="event-day" data-i18n="events.items.0.date">15</span>
+                            <span class="event-month" data-i18n="events.items.0.month">Jan</span>
+                        </div>
+                        <div class="event-info">
+                            <h4 class="event-title" data-i18n="events.items.0.title">Eco-Forum 2025</h4>
+                            <p class="event-location">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span data-i18n="events.items.0.location">Tashkent, Uzbekistan</span>
+                            </p>
+                            <p style="font-size: 14px; color: rgba(26, 26, 46, 0.6); margin-top: 12px;">Annual forum bringing together environmental leaders, students, and experts to discuss sustainable campus initiatives.</p>
+                        </div>
+                        <button class="event-btn">
+                            <span data-i18n="events.register">Register</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                                <path d="M8 2v4"/>
+                                <path d="M16 2v4"/>
+                                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                                <path d="M3 10h18"/>
+                            </svg>
+                            <span class="event-day" data-i18n="events.items.1.date">22</span>
+                            <span class="event-month" data-i18n="events.items.1.month">Feb</span>
+                        </div>
+                        <div class="event-info">
+                            <h4 class="event-title" data-i18n="events.items.1.title">Tree Planting Day</h4>
+                            <p class="event-location">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span data-i18n="events.items.1.location">All Campuses</span>
+                            </p>
+                            <p style="font-size: 14px; color: rgba(26, 26, 46, 0.6); margin-top: 12px;">Join thousands of students across the country in planting trees and creating greener campus environments.</p>
+                        </div>
+                        <button class="event-btn">
+                            <span data-i18n="events.register">Register</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                                <path d="M8 2v4"/>
+                                <path d="M16 2v4"/>
+                                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                                <path d="M3 10h18"/>
+                            </svg>
+                            <span class="event-day" data-i18n="events.items.2.date">05</span>
+                            <span class="event-month" data-i18n="events.items.2.month">Mar</span>
+                        </div>
+                        <div class="event-info">
+                            <h4 class="event-title" data-i18n="events.items.2.title">GreenTech Hackathon</h4>
+                            <p class="event-location">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span data-i18n="events.items.2.location">Samarkand</span>
+                            </p>
+                            <p style="font-size: 14px; color: rgba(26, 26, 46, 0.6); margin-top: 12px;">48-hour innovation challenge to develop technology solutions for environmental challenges facing universities.</p>
+                        </div>
+                        <button class="event-btn">
+                            <span data-i18n="events.register">Register</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                                <path d="M8 2v4"/>
+                                <path d="M16 2v4"/>
+                                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                                <path d="M3 10h18"/>
+                            </svg>
+                            <span class="event-day" data-i18n="events.items.3.date">22</span>
+                            <span class="event-month" data-i18n="events.items.3.month">Apr</span>
+                        </div>
+                        <div class="event-info">
+                            <h4 class="event-title" data-i18n="events.items.3.title">Earth Day</h4>
+                            <p class="event-location">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span data-i18n="events.items.3.location">Online + Offline</span>
+                            </p>
+                            <p style="font-size: 14px; color: rgba(26, 26, 46, 0.6); margin-top: 12px;">Global celebration with workshops, exhibitions, and community activities promoting environmental awareness.</p>
+                        </div>
+                        <button class="event-btn">
+                            <span data-i18n="events.register">Register</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                                <path d="M8 2v4"/>
+                                <path d="M16 2v4"/>
+                                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                                <path d="M3 10h18"/>
+                            </svg>
+                            <span class="event-day">10</span>
+                            <span class="event-month">May</span>
+                        </div>
+                        <div class="event-info">
+                            <h4 class="event-title">Zero Waste Workshop</h4>
+                            <p class="event-location">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>Bukhara</span>
+                            </p>
+                            <p style="font-size: 14px; color: rgba(26, 26, 46, 0.6); margin-top: 12px;">Learn practical strategies for implementing zero-waste practices on your campus.</p>
+                        </div>
+                        <button class="event-btn">
+                            <span>Register</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                                <path d="M8 2v4"/>
+                                <path d="M16 2v4"/>
+                                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                                <path d="M3 10h18"/>
+                            </svg>
+                            <span class="event-day">18</span>
+                            <span class="event-month">Jun</span>
+                        </div>
+                        <div class="event-info">
+                            <h4 class="event-title">Solar Energy Summit</h4>
+                            <p class="event-location">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>Online Event</span>
+                            </p>
+                            <p style="font-size: 14px; color: rgba(26, 26, 46, 0.6); margin-top: 12px;">Expert panel discussing the future of renewable energy in educational institutions.</p>
+                        </div>
+                        <button class="event-btn">
+                            <span>Register</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-glow"></div>
+            <div class="cta-content">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 24px;">
+                    <path d="M8 2v4"/>
+                    <path d="M16 2v4"/>
+                    <rect width="18" height="18" x="3" y="4" rx="2"/>
+                    <path d="M3 10h18"/>
+                </svg>
+                <h2 class="cta-title">Want to Host an Event?</h2>
+                <p class="cta-text">We support student-led initiatives and campus events. Get in touch to organize your own green event!</p>
+                <div class="cta-buttons">
+                    <button class="cta-primary-btn">
+                        <span>Submit Event Proposal</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <button class="cta-secondary-btn">View Event Guidelines</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-icon-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 20h10"/>
+                                    <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                                    <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                                    <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                                </svg>
+                            </div>
+                            <span class="footer-logo-text">Green Campus</span>
+                        </div>
+                        <p class="footer-desc" data-i18n="footer.desc">Creating environmentally sustainable campuses for the education of the future</p>
+                        <div class="footer-socials">
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                            </div>
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                                </svg>
+                            </div>
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                </svg>
+                            </div>
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+                                    <path d="m10 15 5-3-5-3z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4 class="footer-col-title" data-i18n="footer.navigation">Navigation</h4>
+                            <a href="about.html" class="footer-link" data-i18n="footer.links.0">About</a>
+                            <a href="programs.html" class="footer-link" data-i18n="footer.links.1">Programs</a>
+                            <a href="events.html" class="footer-link" data-i18n="footer.links.2">Events</a>
+                            <a href="blog.html" class="footer-link" data-i18n="footer.links.3">News</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-col-title" data-i18n="footer.resources">Resources</h4>
+                            <a href="#" class="footer-link" data-i18n="footer.resourceLinks.0">Methodological Materials</a>
+                            <a href="#" class="footer-link" data-i18n="footer.resourceLinks.1">Research</a>
+                            <a href="#" class="footer-link" data-i18n="footer.resourceLinks.2">FAQ</a>
+                            <a href="#" class="footer-link" data-i18n="footer.resourceLinks.3">For Media</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-col-title" data-i18n="footer.contacts">Contact</h4>
+                            <p class="footer-contact">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                                info@greencampus.org
+                            </p>
+                            <p class="footer-contact">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                +998 71 123-45-67
+                            </p>
+                            <p class="footer-contact">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Tashkent, Uzbekistan
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright" data-i18n="footer.copyright">© 2025 Green Campus Initiative. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="#" class="legal-link" data-i18n="footer.terms">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
