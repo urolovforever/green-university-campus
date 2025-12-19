@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Green Campus Initiative</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Animated gradient background -->
+        <div class="gradient-orb" id="gradientOrb"></div>
+        <div class="gradient-orb-2"></div>
+        <div class="grid-pattern"></div>
+
+        <!-- Floating elements -->
+        <div class="floating-elements">
+            <div class="floating-shape" style="left: 15%; top: 20%; animation-delay: 0s; width: 40px; height: 40px;"></div>
+            <div class="floating-shape" style="left: 30%; top: 45%; animation-delay: 0.5s; width: 50px; height: 50px;"></div>
+            <div class="floating-shape" style="left: 45%; top: 20%; animation-delay: 1s; width: 60px; height: 60px;"></div>
+            <div class="floating-shape" style="left: 60%; top: 45%; animation-delay: 1.5s; width: 70px; height: 70px;"></div>
+            <div class="floating-shape" style="left: 75%; top: 20%; animation-delay: 2s; width: 80px; height: 80px;"></div>
+            <div class="floating-shape" style="left: 90%; top: 45%; animation-delay: 2.5s; width: 90px; height: 90px;"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav scrolled" id="nav">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                        <div class="logo-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 20h10"/>
+                                <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Green Campus</span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="about.html" class="nav-link" data-key="about">About</a>
+                    <a href="programs.html" class="nav-link" data-key="programs">Programs</a>
+                    <a href="events.html" class="nav-link" data-key="events">Events</a>
+                    <a href="#team" class="nav-link" data-key="team">Team</a>
+                    <a href="contact.html" class="nav-link" data-key="contacts">Contact</a>
+
+                    <!-- Language Selector -->
+                    <div class="lang-selector">
+                        <button class="lang-btn" id="langBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                                <path d="M2 12h20"/>
+                            </svg>
+                            <span class="lang-btn-text" id="currentLang">EN</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <button class="lang-option" data-lang="uz">
+                                <span>🇺🇿</span>
+                                <span>O'zbek</span>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5"/>
+                                </svg>
+                            </button>
+                            <button class="lang-option" data-lang="ru">
+                                <span>🇷🇺</span>
+                                <span>Русский</span>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5"/>
+                                </svg>
+                            </button>
+                            <button class="lang-option active" data-lang="en">
+                                <span>🇬🇧</span>
+                                <span>English</span>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="join-btn">
+                        <span data-i18n="nav.join">Join Us</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <section class="hero" style="min-height: 60vh; padding: 180px 32px 80px;">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <span data-i18n="about.tag">About Green Campus Initiative</span>
+                </div>
+                <h1 class="hero-title" style="font-size: clamp(36px, 5vw, 56px);">
+                    <span data-i18n="about.header.title1">A Mission That</span><br>
+                    <span class="hero-highlight" data-i18n="about.header.title2">Unites Generations</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="about.header.subtitle">Building sustainable futures through education, innovation, and community action</p>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="about-section">
+            <div class="section-content">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <span class="section-tag" data-i18n="about.story.tag">Our Story</span>
+                        <h2 class="section-title" data-i18n="about.story.title">Where It All Began</h2>
+                        <p class="about-paragraph" data-i18n="about.story.p1">Since 2018, we have been working to make every university campus a model of environmental responsibility. Our mission is not just about greening territories, but creating a culture of sustainable development.</p>
+                        <p class="about-paragraph" data-i18n="about.story.p2">We believe that it is within university walls that leaders are formed who will change society's attitude towards the environment.</p>
+                        <p class="about-paragraph" data-i18n="about.story.p3">What started as a small student initiative at one university has grown into a nationwide movement, involving thousands of students, faculty members, and environmental professionals across 89 partner institutions.</p>
+                    </div>
+                    <div class="about-visual">
+                        <div class="image-card">
+                            <div class="image-placeholder">
+                                <div class="image-pattern"></div>
+                                <div class="image-icon-wrap">
+                                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                                    </svg>
+                                </div>
+                                <span class="image-label" data-i18n="about.imageLabel">Our volunteers in action</span>
+                            </div>
+                        </div>
+                        <div class="decor-circle-1"></div>
+                        <div class="decor-circle-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="programs-section" style="background-color: rgba(132, 204, 22, 0.02);">
+            <div class="section-content">
+                <div class="programs-header">
+                    <span class="section-tag" data-i18n="about.mission.tag">Mission & Vision</span>
+                    <h2 class="section-title" data-i18n="about.mission.title">What Drives Us Forward</h2>
+                </div>
+                <div class="programs-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                    <div class="program-card">
+                        <div class="program-icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                                <path d="M2 12h20"/>
+                            </svg>
+                        </div>
+                        <h3 class="program-title" data-i18n="about.mission.items.0.title">Our Mission</h3>
+                        <p class="program-desc" data-i18n="about.mission.items.0.description">To transform university campuses into living laboratories for sustainability, where students and faculty develop practical solutions to environmental challenges.</p>
+                        <div class="program-glow"></div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="program-title" data-i18n="about.mission.items.1.title">Our Vision</h3>
+                        <p class="program-desc" data-i18n="about.mission.items.1.description">A future where every university campus is carbon-neutral, waste-free, and serves as a model for sustainable living in the broader community.</p>
+                        <div class="program-glow"></div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m11 17 2 2a1 1 0 1 0 3-3"/>
+                                <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/>
+                                <path d="m21 3 1 11h-2"/>
+                                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/>
+                                <path d="M3 4h8"/>
+                            </svg>
+                        </div>
+                        <h3 class="program-title" data-i18n="about.mission.items.2.title">Our Values</h3>
+                        <p class="program-desc" data-i18n="about.mission.items.2.description">Innovation, collaboration, and responsibility guide everything we do. We believe in science-based solutions and the power of community action.</p>
+                        <div class="program-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section" id="team">
+            <div class="section-content">
+                <div class="team-header">
+                    <span class="section-tag" data-i18n="team.tag">Our Team</span>
+                    <h2 class="section-title" data-i18n="team.title">The People Making It Happen</h2>
+                    <p class="section-subtitle" style="text-align: center; max-width: 700px; margin: 20px auto 0;">A diverse team of environmental scientists, educators, and passionate activists working together to create lasting change.</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar-wrap">
+                            <div class="team-avatar">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="team-avatar-ring"></div>
+                        </div>
+                        <h4 class="team-name" data-i18n="team.members.0.name">Anna Greenwood</h4>
+                        <p class="team-role" data-i18n="team.members.0.role">Founder & Director</p>
+                        <div class="team-social">
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                            </div>
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect width="4" height="12" x="2" y="9"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar-wrap">
+                            <div class="team-avatar">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="team-avatar-ring"></div>
+                        </div>
+                        <h4 class="team-name" data-i18n="team.members.1.name">Michael Rivers</h4>
+                        <p class="team-role" data-i18n="team.members.1.role">Programs Coordinator</p>
+                        <div class="team-social">
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                            </div>
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect width="4" height="12" x="2" y="9"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar-wrap">
+                            <div class="team-avatar">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="team-avatar-ring"></div>
+                        </div>
+                        <h4 class="team-name" data-i18n="team.members.2.name">Elena Forest</h4>
+                        <p class="team-role" data-i18n="team.members.2.role">Scientific Advisor</p>
+                        <div class="team-social">
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                            </div>
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect width="4" height="12" x="2" y="9"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar-wrap">
+                            <div class="team-avatar">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="team-avatar-ring"></div>
+                        </div>
+                        <h4 class="team-name" data-i18n="team.members.3.name">David Campus</h4>
+                        <p class="team-role" data-i18n="team.members.3.role">University Relations</p>
+                        <div class="team-social">
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                            </div>
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect width="4" height="12" x="2" y="9"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="social-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-glow"></div>
+            <div class="cta-content">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 24px;">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+                <h2 class="cta-title" data-i18n="cta.title">Ready to Make Your Campus Green?</h2>
+                <p class="cta-text" data-i18n="cta.subtitle">Join the movement for a sustainable future. Together we can do more!</p>
+                <div class="cta-buttons">
+                    <button class="cta-primary-btn">
+                        <span data-i18n="cta.partner">Become a Partner</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <button class="cta-secondary-btn" data-i18n="cta.volunteer">Become a Volunteer</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="contacts">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-icon-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 20h10"/>
+                                    <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                                    <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                                    <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                                </svg>
+                            </div>
+                            <span class="footer-logo-text">Green Campus</span>
+                        </div>
+                        <p class="footer-desc" data-i18n="footer.desc">Creating environmentally sustainable campuses for the education of the future</p>
+                        <div class="footer-socials">
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                            </div>
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                                </svg>
+                            </div>
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                </svg>
+                            </div>
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+                                    <path d="m10 15 5-3-5-3z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4 class="footer-col-title" data-i18n="footer.navigation">Navigation</h4>
+                            <a href="about.html" class="footer-link" data-i18n="footer.links.0">About</a>
+                            <a href="programs.html" class="footer-link" data-i18n="footer.links.1">Programs</a>
+                            <a href="events.html" class="footer-link" data-i18n="footer.links.2">Events</a>
+                            <a href="blog.html" class="footer-link" data-i18n="footer.links.3">News</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-col-title" data-i18n="footer.resources">Resources</h4>
+                            <a href="#" class="footer-link" data-i18n="footer.resourceLinks.0">Methodological Materials</a>
+                            <a href="#" class="footer-link" data-i18n="footer.resourceLinks.1">Research</a>
+                            <a href="#" class="footer-link" data-i18n="footer.resourceLinks.2">FAQ</a>
+                            <a href="#" class="footer-link" data-i18n="footer.resourceLinks.3">For Media</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-col-title" data-i18n="footer.contacts">Contact</h4>
+                            <p class="footer-contact">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                                info@greencampus.org
+                            </p>
+                            <p class="footer-contact">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                +998 71 123-45-67
+                            </p>
+                            <p class="footer-contact">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Tashkent, Uzbekistan
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright" data-i18n="footer.copyright">© 2025 Green Campus Initiative. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="#" class="legal-link" data-i18n="footer.terms">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
