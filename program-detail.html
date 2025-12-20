@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Campus Program - Green Campus Initiative</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .program-detail-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .program-detail-header {
+            margin-bottom: 48px;
+        }
+        .program-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(26, 26, 46, 0.6);
+            margin-bottom: 24px;
+        }
+        .program-breadcrumb a {
+            color: #84cc16;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .program-breadcrumb a:hover {
+            opacity: 0.7;
+        }
+        .program-category {
+            display: inline-block;
+            background-color: rgba(132, 204, 22, 0.1);
+            color: #84cc16;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .program-detail-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .program-detail-subtitle {
+            font-size: 18px;
+            color: rgba(26, 26, 46, 0.7);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .program-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 24px 0;
+            border-top: 1px solid rgba(132, 204, 22, 0.1);
+            border-bottom: 1px solid rgba(132, 204, 22, 0.1);
+            margin-bottom: 48px;
+        }
+        .program-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(26, 26, 46, 0.6);
+        }
+        .program-hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(132, 204, 22, 0.1) 0%, rgba(163, 230, 53, 0.2) 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .program-hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(132, 204, 22, 0.1) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .program-section {
+            margin-bottom: 48px;
+        }
+        .program-section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+        }
+        .program-section-text {
+            font-size: 16px;
+            color: rgba(26, 26, 46, 0.7);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .program-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .program-feature-card {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(132, 204, 22, 0.1);
+            transition: all 0.3s;
+        }
+        .program-feature-card:hover {
+            box-shadow: 0 10px 30px rgba(132, 204, 22, 0.1);
+            transform: translateY(-4px);
+        }
+        .program-feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(132, 204, 22, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .program-feature-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        .program-feature-desc {
+            font-size: 14px;
+            color: rgba(26, 26, 46, 0.6);
+            line-height: 1.6;
+        }
+        .program-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin-top: 32px;
+        }
+        .program-step {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 32px;
+        }
+        .program-step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #84cc16;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .program-step-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        .program-step-desc {
+            font-size: 14px;
+            color: rgba(26, 26, 46, 0.6);
+            line-height: 1.6;
+        }
+        .program-cta-box {
+            background: linear-gradient(135deg, #84cc16 0%, #a3e635 100%);
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            margin-top: 64px;
+        }
+        .program-cta-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .program-cta-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+        }
+        .program-cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .program-cta-btn {
+            background-color: white;
+            color: #84cc16;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .program-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .program-cta-btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        @media (max-width: 768px) {
+            .program-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .program-hero-image {
+                height: 250px;
+            }
+            .program-cta-box {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gradient-orb" id="gradientOrb"></div>
+        <div class="gradient-orb-2"></div>
+        <div class="grid-pattern"></div>
+
+        <div class="floating-elements">
+            <div class="floating-shape" style="left: 15%; top: 20%; animation-delay: 0s; width: 40px; height: 40px;"></div>
+            <div class="floating-shape" style="left: 30%; top: 45%; animation-delay: 0.5s; width: 50px; height: 50px;"></div>
+            <div class="floating-shape" style="left: 45%; top: 20%; animation-delay: 1s; width: 60px; height: 60px;"></div>
+            <div class="floating-shape" style="left: 60%; top: 45%; animation-delay: 1.5s; width: 70px; height: 70px;"></div>
+            <div class="floating-shape" style="left: 75%; top: 20%; animation-delay: 2s; width: 80px; height: 80px;"></div>
+            <div class="floating-shape" style="left: 90%; top: 45%; animation-delay: 2.5s; width: 90px; height: 90px;"></div>
+        </div>
+
+        <nav class="nav scrolled" id="nav">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                        <div class="logo-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 20h10"/>
+                                <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Green Campus</span>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-links">
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="programs.html" class="nav-link">Programs</a>
+                    <a href="events.html" class="nav-link">Events</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="team.html" class="nav-link">Team</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <div class="lang-selector">
+                        <button class="lang-btn" id="langBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                                <path d="M2 12h20"/>
+                            </svg>
+                            <span class="lang-btn-text" id="currentLang">EN</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <button class="lang-option" data-lang="uz">
+                                <span>🇺🇿</span>
+                                <span>O'zbek</span>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5"/>
+                                </svg>
+                            </button>
+                            <button class="lang-option" data-lang="ru">
+                                <span>🇷🇺</span>
+                                <span>Русский</span>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5"/>
+                                </svg>
+                            </button>
+                            <button class="lang-option active" data-lang="en">
+                                <span>🇬🇧</span>
+                                <span>English</span>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="join-btn">
+                        <span>Join Us</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="about-section" style="padding-top: 160px;">
+            <div class="program-detail-content">
+                <div class="program-detail-header">
+                    <div class="program-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                        <a href="programs.html">Programs</a>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                        <span>Green Campus</span>
+                    </div>
+
+                    <span class="program-category">Campus Sustainability</span>
+
+                    <h1 class="program-detail-title">Green Campus Initiative</h1>
+                    <p class="program-detail-subtitle">Transform your university into an environmentally sustainable campus through comprehensive greening programs, waste management systems, and energy efficiency solutions.</p>
+
+                    <div class="program-meta">
+                        <div class="program-meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20h9"/>
+                                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+                            </svg>
+                            Duration: 12-18 months
+                        </div>
+                        <div class="program-meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+                                <path d="M22 10v6"/>
+                                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+                            </svg>
+                            45+ Universities Enrolled
+                        </div>
+                        <div class="program-meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            5,000+ Students Impacted
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-hero-image">
+                    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
+                        <path d="M9 22v-4h6v4"/>
+                        <path d="M8 6h.01"/>
+                        <path d="M16 6h.01"/>
+                        <path d="M12 6h.01"/>
+                        <path d="M12 10h.01"/>
+                        <path d="M12 14h.01"/>
+                        <path d="M16 10h.01"/>
+                        <path d="M16 14h.01"/>
+                        <path d="M8 10h.01"/>
+                        <path d="M8 14h.01"/>
+                    </svg>
+                </div>
+
+                <div class="program-section">
+                    <h2 class="program-section-title">Program Overview</h2>
+                    <p class="program-section-text">
+                        The Green Campus Initiative is our flagship program designed to help universities transition to sustainable operations. Through a comprehensive approach that combines infrastructure improvements, behavioral change, and community engagement, we help campuses reduce their environmental impact while creating healthier learning environments.
+                    </p>
+                    <p class="program-section-text">
+                        Our program focuses on three core pillars: green infrastructure development, waste management optimization, and energy efficiency improvements. Each pillar is carefully designed to create measurable impact while engaging students, faculty, and staff in the sustainability journey.
+                    </p>
+                </div>
+
+                <div class="program-section">
+                    <h2 class="program-section-title">Key Program Features</h2>
+                    <div class="program-features-grid">
+                        <div class="program-feature-card">
+                            <div class="program-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 20h10"/>
+                                    <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                                    <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                                    <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="program-feature-title">Green Infrastructure</h3>
+                            <p class="program-feature-desc">Design and implement sustainable landscaping, green roofs, rain gardens, and native plant restoration projects.</p>
+                        </div>
+
+                        <div class="program-feature-card">
+                            <div class="program-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/>
+                                    <path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/>
+                                </svg>
+                            </div>
+                            <h3 class="program-feature-title">Smart Waste Management</h3>
+                            <p class="program-feature-desc">Implement comprehensive recycling programs, composting systems, and waste reduction strategies.</p>
+                        </div>
+
+                        <div class="program-feature-card">
+                            <div class="program-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
+                                </svg>
+                            </div>
+                            <h3 class="program-feature-title">Energy Efficiency</h3>
+                            <p class="program-feature-desc">Conduct energy audits, upgrade to LED lighting, and optimize HVAC systems for maximum efficiency.</p>
+                        </div>
+
+                        <div class="program-feature-card">
+                            <div class="program-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <h3 class="program-feature-title">Community Engagement</h3>
+                            <p class="program-feature-desc">Organize workshops, awareness campaigns, and volunteer programs to engage the entire campus community.</p>
+                        </div>
+
+                        <div class="program-feature-card">
+                            <div class="program-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" x2="12" y1="20" y2="10"/>
+                                    <line x1="18" x2="18" y1="20" y2="4"/>
+                                    <line x1="6" x2="6" y1="20" y2="16"/>
+                                </svg>
+                            </div>
+                            <h3 class="program-feature-title">Impact Measurement</h3>
+                            <p class="program-feature-desc">Track and report on sustainability metrics including carbon reduction, waste diversion, and energy savings.</p>
+                        </div>
+
+                        <div class="program-feature-card">
+                            <div class="program-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 20h9"/>
+                                    <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="program-feature-title">Expert Support</h3>
+                            <p class="program-feature-desc">Access to sustainability consultants, technical resources, and best practices from leading green campuses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-section">
+                    <h2 class="program-section-title">Implementation Process</h2>
+                    <ol class="program-steps">
+                        <li class="program-step">
+                            <div class="program-step-title">Campus Assessment</div>
+                            <div class="program-step-desc">Conduct comprehensive audit of current infrastructure, waste management, and energy use. Identify opportunities and set baseline metrics.</div>
+                        </li>
+                        <li class="program-step">
+                            <div class="program-step-title">Strategic Planning</div>
+                            <div class="program-step-desc">Develop customized sustainability roadmap with clear goals, timelines, and resource allocation. Engage stakeholders and secure commitments.</div>
+                        </li>
+                        <li class="program-step">
+                            <div class="program-step-title">Infrastructure Upgrades</div>
+                            <div class="program-step-desc">Implement physical improvements including green spaces, waste stations, and energy-efficient systems. Complete installation and testing.</div>
+                        </li>
+                        <li class="program-step">
+                            <div class="program-step-title">Community Launch</div>
+                            <div class="program-step-desc">Roll out awareness campaigns, training programs, and engagement activities. Build culture of sustainability across campus.</div>
+                        </li>
+                        <li class="program-step">
+                            <div class="program-step-title">Monitor & Optimize</div>
+                            <div class="program-step-desc">Track progress against goals, collect feedback, and make continuous improvements. Celebrate successes and share learnings.</div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="program-section">
+                    <h2 class="program-section-title">Expected Outcomes</h2>
+                    <p class="program-section-text">
+                        Universities that complete the Green Campus Initiative typically achieve:
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin-top: 24px;">
+                        <li style="font-size: 16px; color: rgba(26, 26, 46, 0.7); padding-left: 32px; margin-bottom: 16px; position: relative; line-height: 1.8;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 0; top: 3px;">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            30-40% reduction in energy consumption through efficiency upgrades
+                        </li>
+                        <li style="font-size: 16px; color: rgba(26, 26, 46, 0.7); padding-left: 32px; margin-bottom: 16px; position: relative; line-height: 1.8;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 0; top: 3px;">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            60-75% waste diversion rate through recycling and composting
+                        </li>
+                        <li style="font-size: 16px; color: rgba(26, 26, 46, 0.7); padding-left: 32px; margin-bottom: 16px; position: relative; line-height: 1.8;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 0; top: 3px;">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            25% increase in green space and biodiversity on campus
+                        </li>
+                        <li style="font-size: 16px; color: rgba(26, 26, 46, 0.7); padding-left: 32px; margin-bottom: 16px; position: relative; line-height: 1.8;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 0; top: 3px;">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            85%+ student and staff awareness of sustainability initiatives
+                        </li>
+                        <li style="font-size: 16px; color: rgba(26, 26, 46, 0.7); padding-left: 32px; position: relative; line-height: 1.8;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 0; top: 3px;">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Significant cost savings from reduced utility bills and waste disposal
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="program-cta-box">
+                    <h2 class="program-cta-title">Ready to Green Your Campus?</h2>
+                    <p class="program-cta-text">Join 45+ universities already transforming their campuses through our Green Campus Initiative</p>
+                    <div class="program-cta-buttons">
+                        <button class="program-cta-btn">
+                            <span>Apply Now</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <button class="program-cta-btn program-cta-btn-outline">
+                            <span>Download Program Guide</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" x2="12" y1="15" y2="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-icon-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 20h10"/>
+                                    <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                                    <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                                    <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                                </svg>
+                            </div>
+                            <span class="footer-logo-text">Green Campus</span>
+                        </div>
+                        <p class="footer-desc">Creating environmentally sustainable campuses for the education of the future</p>
+                        <div class="footer-socials">
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                            </div>
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                                </svg>
+                            </div>
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                </svg>
+                            </div>
+                            <div class="footer-social-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+                                    <path d="m10 15 5-3-5-3z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4 class="footer-col-title">Navigation</h4>
+                            <a href="about.html" class="footer-link">About</a>
+                            <a href="programs.html" class="footer-link">Programs</a>
+                            <a href="events.html" class="footer-link">Events</a>
+                            <a href="blog.html" class="footer-link">News</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-col-title">Resources</h4>
+                            <a href="#" class="footer-link">Methodological Materials</a>
+                            <a href="#" class="footer-link">Research</a>
+                            <a href="#" class="footer-link">FAQ</a>
+                            <a href="#" class="footer-link">For Media</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-col-title">Contact</h4>
+                            <p class="footer-contact">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                                info@greencampus.org
+                            </p>
+                            <p class="footer-contact">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                +998 71 123-45-67
+                            </p>
+                            <p class="footer-contact">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Tashkent, Uzbekistan
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">© 2025 Green Campus Initiative. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
