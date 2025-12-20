@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Campus Initiative</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,12 +18,12 @@
 
         <!-- Floating elements -->
         <div class="floating-elements">
-            <div class="floating-shape" style="left: 15%; top: 20%; animation-delay: 0s; width: 40px; height: 40px;"></div>
-            <div class="floating-shape" style="left: 30%; top: 45%; animation-delay: 0.5s; width: 50px; height: 50px;"></div>
-            <div class="floating-shape" style="left: 45%; top: 20%; animation-delay: 1s; width: 60px; height: 60px;"></div>
-            <div class="floating-shape" style="left: 60%; top: 45%; animation-delay: 1.5s; width: 70px; height: 70px;"></div>
-            <div class="floating-shape" style="left: 75%; top: 20%; animation-delay: 2s; width: 80px; height: 80px;"></div>
-            <div class="floating-shape" style="left: 90%; top: 45%; animation-delay: 2.5s; width: 90px; height: 90px;"></div>
+            <div class="floating-shape floating-shape-1"></div>
+            <div class="floating-shape floating-shape-2"></div>
+            <div class="floating-shape floating-shape-3"></div>
+            <div class="floating-shape floating-shape-4"></div>
+            <div class="floating-shape floating-shape-5"></div>
+            <div class="floating-shape floating-shape-6"></div>
         </div>
 
         <!-- Navigation -->
@@ -125,14 +125,14 @@
                 </h1>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">Green Campus Initiative unites students, faculty, and administration to create environmentally sustainable educational spaces</p>
                 <div class="hero-cta">
-                    <a href="programs.html" class="primary-btn" style="text-decoration: none;">
+                    <a href="programs.html" class="primary-btn no-decoration">
                         <span data-i18n="hero.startNow">Get Started</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"/>
                             <path d="m12 5 7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="about.html" class="secondary-btn" style="text-decoration: none;">
+                    <a href="about.html" class="secondary-btn no-decoration">
                         <div class="play-icon-wrap">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="#84cc16" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polygon points="6 3 20 12 6 21 6 3"/>
@@ -145,7 +145,7 @@
 
             <!-- Stats Cards -->
             <div class="hero-stats" id="heroStats">
-                <div class="stat-card" style="animation-delay: 0s;">
+                <div class="stat-card stat-card-1">
                     <div class="stat-icon-wrap">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
@@ -155,7 +155,7 @@
                     <span class="stat-number" id="stat0">0%</span>
                     <span class="stat-label" data-i18n="stats.0.label">Carbon Footprint Reduction</span>
                 </div>
-                <div class="stat-card" style="animation-delay: 0.15s;">
+                <div class="stat-card stat-card-2">
                     <div class="stat-icon-wrap">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
@@ -167,7 +167,7 @@
                     <span class="stat-number" id="stat1">0K+</span>
                     <span class="stat-label" data-i18n="stats.1.label">Active Participants</span>
                 </div>
-                <div class="stat-card" style="animation-delay: 0.3s;">
+                <div class="stat-card stat-card-3">
                     <div class="stat-icon-wrap">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
@@ -178,7 +178,7 @@
                     <span class="stat-number" id="stat2">0</span>
                     <span class="stat-label" data-i18n="stats.2.label">Partner Universities</span>
                 </div>
-                <div class="stat-card" style="animation-delay: 0.45s;">
+                <div class="stat-card stat-card-4">
                     <div class="stat-icon-wrap">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#84cc16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 19V5M5 11l7-7 7 7M5 15l7-7 7 7M8 19h8" />
@@ -248,7 +248,7 @@
                             <div class="image-placeholder">
                                 <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop"
                                      alt="Green Campus volunteers planting trees"
-                                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                                     class="about-image">
                             </div>
                         </div>
                         <div class="floating-card">
@@ -268,10 +268,10 @@
                         <div class="decor-circle-2"></div>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 48px;">
-                    <a href="about.html" class="impact-btn" style="text-decoration: none;">
+                <div class="section-footer">
+                    <a href="about.html" class="impact-btn no-decoration">
                         <span>Learn More About Us</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+                        <svg class="icon-ml-sm" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"/>
                             <path d="m12 5 7 7-7 7"/>
                         </svg>
@@ -362,7 +362,7 @@
                     <h2 class="impact-title" data-i18n="impact.title">In 6 years, we have changed the perception of what a university campus can be</h2>
                     <div class="impact-grid">
                         <div class="impact-item">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a3e635" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px;">
+                            <svg class="icon-mb-md" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a3e635" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M3 3v18h18"/>
                                 <path d="M18 17V9"/>
                                 <path d="M13 17V5"/>
@@ -372,7 +372,7 @@
                             <span class="impact-label" data-i18n="impact.stats.0.label">Eco-projects Implemented</span>
                         </div>
                         <div class="impact-item">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a3e635" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px;">
+                            <svg class="icon-mb-md" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a3e635" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
                                 <polyline points="16 7 22 7 22 13"/>
                             </svg>
@@ -380,7 +380,7 @@
                             <span class="impact-label" data-i18n="impact.stats.1.label">Funding Raised</span>
                         </div>
                         <div class="impact-item">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a3e635" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px;">
+                            <svg class="icon-mb-md" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a3e635" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
                                 <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
                             </svg>
@@ -388,9 +388,9 @@
                             <span class="impact-label" data-i18n="impact.stats.2.label">Tons of CO₂ Offset</span>
                         </div>
                     </div>
-                    <a href="blog.html" class="impact-btn" style="text-decoration: none;">
+                    <a href="blog.html" class="impact-btn no-decoration">
                         <span data-i18n="impact.report">Read Annual Report</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+                        <svg class="icon-ml-sm" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M15 3h6v6"/>
                             <path d="M10 14 21 3"/>
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -408,7 +408,7 @@
                         <span class="section-tag" data-i18n="events.tag">Event Calendar</span>
                         <h2 class="section-title" data-i18n="events.title">Upcoming Events</h2>
                     </div>
-                    <a href="events.html" class="all-events-btn" style="text-decoration: none;">
+                    <a href="events.html" class="all-events-btn no-decoration">
                         <span data-i18n="events.allEvents">All Events</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"/>
@@ -419,7 +419,7 @@
                 <div class="events-grid">
                     <div class="event-card">
                         <div class="event-date">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                            <svg class="icon-mb-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M8 2v4"/>
                                 <path d="M16 2v4"/>
                                 <rect width="18" height="18" x="3" y="4" rx="2"/>
@@ -431,7 +431,7 @@
                         <div class="event-info">
                             <h4 class="event-title" data-i18n="events.items.0.title">Eco-Forum 2025</h4>
                             <p class="event-location">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                <svg class="icon-mr-sm" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
@@ -448,7 +448,7 @@
                     </div>
                     <div class="event-card">
                         <div class="event-date">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                            <svg class="icon-mb-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M8 2v4"/>
                                 <path d="M16 2v4"/>
                                 <rect width="18" height="18" x="3" y="4" rx="2"/>
@@ -460,7 +460,7 @@
                         <div class="event-info">
                             <h4 class="event-title" data-i18n="events.items.1.title">Tree Planting Day</h4>
                             <p class="event-location">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                <svg class="icon-mr-sm" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
@@ -477,7 +477,7 @@
                     </div>
                     <div class="event-card">
                         <div class="event-date">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                            <svg class="icon-mb-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M8 2v4"/>
                                 <path d="M16 2v4"/>
                                 <rect width="18" height="18" x="3" y="4" rx="2"/>
@@ -489,7 +489,7 @@
                         <div class="event-info">
                             <h4 class="event-title" data-i18n="events.items.2.title">GreenTech Hackathon</h4>
                             <p class="event-location">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                <svg class="icon-mr-sm" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
@@ -506,7 +506,7 @@
                     </div>
                     <div class="event-card">
                         <div class="event-date">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 4px;">
+                            <svg class="icon-mb-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M8 2v4"/>
                                 <path d="M16 2v4"/>
                                 <rect width="18" height="18" x="3" y="4" rx="2"/>
@@ -518,7 +518,7 @@
                         <div class="event-info">
                             <h4 class="event-title" data-i18n="events.items.3.title">Earth Day</h4>
                             <p class="event-location">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                                <svg class="icon-mr-sm" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
@@ -666,10 +666,10 @@
                         </div>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 48px;">
-                    <a href="team.html" class="impact-btn" style="text-decoration: none;">
+                <div class="section-footer">
+                    <a href="team.html" class="impact-btn no-decoration">
                         <span>View All Team Members</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+                        <svg class="icon-ml-sm" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"/>
                             <path d="m12 5 7 7-7 7"/>
                         </svg>
@@ -682,7 +682,7 @@
         <section class="cta-section">
             <div class="cta-glow"></div>
             <div class="cta-content">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 24px;">
+                <svg class="icon-mb-lg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
                 </svg>
                 <h2 class="cta-title" data-i18n="cta.title">Ready to Make Your Campus Green?</h2>
@@ -760,20 +760,20 @@
                         <div class="footer-column">
                             <h4 class="footer-col-title" data-i18n="footer.contacts">Contact</h4>
                             <p class="footer-contact">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                <svg class="icon-mr-md" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect width="20" height="16" x="2" y="4" rx="2"/>
                                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                                 </svg>
                                 info@greencampus.org
                             </p>
                             <p class="footer-contact">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                <svg class="icon-mr-md" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                                 </svg>
                                 +998 71 123-45-67
                             </p>
                             <p class="footer-contact">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                <svg class="icon-mr-md" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
