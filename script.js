@@ -554,10 +554,32 @@ if (mobileMenuBtn) {
     });
 }
 
+// Highlight active page in navigation
+function highlightActivePage() {
+    // Get current page filename
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    // Remove active class from all nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+
+        // Get the href attribute
+        const href = link.getAttribute('href');
+
+        // Check if this link matches the current page
+        if (href === currentPage ||
+            (currentPage === '' && href === 'index.html') ||
+            (currentPage === '/' && href === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     updateTranslations();
     if (heroStats) {
         updateStatNumbers();
     }
+    highlightActivePage();
 });
